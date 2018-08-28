@@ -29,7 +29,7 @@ final public class MyAnimate {
     private int twentyY = 74;
     
     //Tiefighter Starting Location
-    private int tieY = 300;
+    private int tieY = 700;
     
     //Laser Position
     private int laserY = tieY + 10;
@@ -102,7 +102,7 @@ final public class MyAnimate {
             g.fillRect(475, nineteenY, dotSize, dotSize);
             g.fillRect(28, twentyY, dotSize, dotSize);
 
-            //Lasers
+            //Tie Lasers
             g.setColor(Color.GREEN);
             g.fillRect(228, laserY, 2, 50);
             g.fillRect(270, laserY, 2, 50);
@@ -126,6 +126,26 @@ final public class MyAnimate {
             g.fillRect(319, tieY + 40, 2, 25);
             g.setColor(Color.CYAN);
             g.fillOval(230, tieY, 40, 10);
+            
+            //X-Wing
+            g.setColor(new Color(234, 237, 192)); //X-Wing body color
+            g.fillOval(225, 150, 30, 100);
+            g.fillRect(225, 200, 30, 70);
+            g.fillRect(220, 270, 40, 60);
+            g.fillRect(215, 310, 50, 25);
+            g.fillRect(210, 335, 60, 100);
+            g.fillOval(210, 425, 60, 20);
+            g.fillRect(40, 345, 170, 60);
+            g.fillRect(80, 405, 130, 7);
+            g.fillRect(120, 412, 90, 7);
+            g.fillRect(160, 419, 50, 7);
+            g.fillRect(270, 345, 170, 60);
+            g.fillRect(270, 405, 130, 7);
+            g.fillRect(270, 412, 90, 7);
+            g.fillRect(270, 419, 50, 7);
+            
+            
+            
         }
     }
 
@@ -164,6 +184,13 @@ final public class MyAnimate {
         
         //Tie Movement
         //tieY -= 2;
+        
+        //Laser Movement
+        if (tieY > 300) {
+        	laserY -= 2;
+        }else {
+        	laserY -= 5;
+        }
     }
     private void starReset() {
     	if (oneY >= 500) {
